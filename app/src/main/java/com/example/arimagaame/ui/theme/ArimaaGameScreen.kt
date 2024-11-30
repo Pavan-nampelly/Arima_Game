@@ -8,16 +8,27 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
 fun ArimaaGameScreen() {
+    // Background gradient with a shade effect
+    val backgroundBrush = Brush.verticalGradient(
+        colors = listOf(
+            Color.Yellow, // Dark blue shade
+            Color.Green  // Lighter blue shade
+        )
+    )
+
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .background(backgroundBrush) // Apply gradient background here
     ) {
-        // Taskbar
+        // Taskbar with a solid background color
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -32,13 +43,13 @@ fun ArimaaGameScreen() {
             )
         }
 
-        // Game Board
+        // Game Board section
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(8.dp)
         ) {
-            ArimaaGameBoard()
+            ArimaaGameBoard() // This is your existing board composable
         }
     }
 }
