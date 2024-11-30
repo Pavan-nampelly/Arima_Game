@@ -47,11 +47,11 @@ fun DrawScope.drawBoard() {
     for (row in 0..7) {
         for (col in 0..7) {
             val isTrap = (row == 2 || row == 5) && (col == 2 || col == 5)
-//            drawRect(
-//                color = if (isTrap) Color.Red else if ((row + col) % 2 == 0) Color(0xFFDDDDDD) else Color(0xFFAAAAAA),
-//                topLeft = androidx.compose.ui.geometry.Offset(col * cellSize, row * cellSize),
-//                size = androidx.compose.ui.geometry.Size(cellSize, cellSize)
-//            )
+            drawRect(
+                color = if (isTrap) Color.Red else if ((row + col) % 2 == 0) Color(0xFFDDDDDD) else Color(0xFFAAAAAA),
+                topLeft = androidx.compose.ui.geometry.Offset(col * cellSize, row * cellSize),
+                size = androidx.compose.ui.geometry.Size(cellSize, cellSize)
+            )
         }
     }
 }
